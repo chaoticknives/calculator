@@ -1,9 +1,14 @@
+let num1;
+let num2;
+let operator;
+
 let sum; //addition
 let difference; //subtraction
 let product; //multiplication
 let quotient; //division
 
-function add (num1, num2) {
+//Create a new function operate that takes an operator and two numbers and then calls one of the above functions on the numbers.
+function addition (num1, num2) {
     sum = num1 + num2;
     return sum;
 }
@@ -23,7 +28,22 @@ function division (num1, num2) {
     return quotient;
 }
 
-console.log(add(10, 5));
-console.log(subtraction(10, 5));
-console.log(multiplication(10, 5));
-console.log(division(10, 5));
+function operate (operator, num1, num2) {
+    if (operator === "+") {
+        return addition(num1, num2);
+    }
+    else if (operator === "-") {
+        return subtraction (num1, num2);
+    }
+    else if (operator === "*") {
+        return multiplication(num1, num2);
+    }
+    else if (operator === "/") {
+        return division(num1, num2);
+    }
+}
+
+console.log(operate("+", 10, 5));
+console.log(operate("-", 10, 5));
+console.log(operate("*", 10, 5));
+console.log(operate("/", 10, 5));
